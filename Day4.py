@@ -22,4 +22,4 @@ class Day4:
             if number_of_words >= max_amount:
                 result[word] = number_of_words
 
-        print(result)
+        return result
