@@ -25,17 +25,18 @@ class Day2:
         for word in forbidden_words:
             pure_text = pure_text.replace(word, '***')
 
-        if len(pure_text) <= max_len:
-            pure_short_text = pure_text[:max_len]
-        else:
-            pure_short_text = pure_text[:max_len] + '...'
+        pure_short_text = pure_text[:max_len]
+        if len(pure_text) > max_len:
+            pure_short_text = pure_short_text + '...'
 
-        dictionary = {"length": len(text),
-                      "pure_length": len(text.replace(' ', '')),
-                      "origin_text": text,
-                      "pure_text": pure_text,
-                      "pure_short_text": pure_short_text
-                      }
-        json_object = json.loads(json.dumps(dictionary))
+        result = {"length": len(text),
+                  "pure_length": len(text.replace(' ', '')),
+                  "origin_text": text,
+                  "pure_text": pure_text,
+                  "pure_short_text": pure_short_text
+                  }
 
-        print(json_object)
+        print(str(result).replace(',', ',\n'))
+
+
+Day2.text_processor("Буська", 6, ["усь"])
