@@ -1,4 +1,4 @@
-class Day5():
+class Day5:
 
     def check_number(number: int):
         number_string = str(number)
